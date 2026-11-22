@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "io.github.inoess.chengjibu",
+    "sha256_cert_fingerprints": ["33:11:37:C4:8B:A2:ED:E0:16:CB:73:4D:0B:75:E9:B7:9D:4F:0B:D2:6F:51:B6:EF:70:DB:2A:B3:3C:54:ED:05"]
+  }
+}]
