@@ -1,0 +1,38 @@
+{
+  "id": "./",
+  "name": "成绩簿 · 高中成绩记录",
+  "short_name": "成绩簿",
+  "description": "纯本地、离线、单人使用的高中成绩记录应用：记分数与排名、看趋势、对照目标。无账号、无云同步、无联网 AI。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#f2efe6",
+  "theme_color": "#f2efe6",
+  "categories": ["education", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "记录一场",
+      "short_name": "记录",
+      "description": "直接打开成绩录入",
+      "url": "./?action=record",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "看分析",
+      "short_name": "分析",
+      "description": "直接打开趋势与分析",
+      "url": "./?action=analysis",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
