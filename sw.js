@@ -1,5 +1,5 @@
 /* 成绩簿离线缓存：只缓存本应用的静态文件，不接触成绩数据。 */
-const CACHE = 'chengjibu-v1.1';
+const CACHE = 'chengjibu-v1.2';
 const CORE = [
   './',
   './index.html',
@@ -11,13 +11,14 @@ const CORE = [
 ];
 
 self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(CACHE).then(function (cache) {
-      return cache.addAll(CORE);
-    }).then(function () {
-      return self.skipWaiting();
-    })
-  );
+  event.waitUntil((async function () {
+    var cache = await caches.open(CACHE);
+    // 逐个缓存：单个静态资源遇到 CDN 瞬时 503 时，不让整次安装失败。
+    await Promise.all(CORE.map(async function (url) {
+      try { await cache.add(url); } catch (err) { /* 忽略单项失败，页面仍可离线打开 */ }
+    }));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', function (event) {
